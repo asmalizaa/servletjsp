@@ -2,7 +2,7 @@
 
 1. [Introduction](https://github.com/asmalizaa/servletjsp/blob/main/chapter1.md)
 2. [Servlets](https://github.com/asmalizaa/servletjsp/blob/main/chapter2.md)
-   - [Activity 1] (https://github.com/asmalizaa/servletjsp/blob/main/activity1.md)
+   - [Activity 1](https://github.com/asmalizaa/servletjsp/blob/main/activity1.md)
 3. [Sessions Management]()
 4. [JSP]()
 5. [The Expression Language]()

@@ -1,7 +1,7 @@
 # Servlet and JSP
 
 1. [Introduction](https://github.com/asmalizaa/servletjsp/blob/main/chapter1.md)
-2. [Servlets]()
+2. [Servlets](https://github.com/asmalizaa/servletjsp/blob/main/chapter2.md)
 3. [Sessions Management]()
 4. [JSP]()
 5. [The Expression Language]()

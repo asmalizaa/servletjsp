@@ -4,30 +4,60 @@ Servlet/JSP application architecture is a common approach for developing web app
 
 ## Key Components
 
-1. Client (Browser)
+1. **Client (Browser)**
 
    Users interact with the web application through a web browser. The browser sends HTTP requests and receives HTTP responses.
 
-3. Web Server
+3. **Web Server**
 
    The web server handles HTTP requests from clients and forwards them to the appropriate servlet or JSP for processing. Common web servers include Apache Tomcat, Jetty, and GlassFish.
 
-5. Servlets
+5. **Servlets**
 
    Servlets are Java classes that handle HTTP requests and generate responses. They are the backbone of the application, processing business logic, interacting with databases, and managing the application state.
 
-7. JSP (JavaServer Pages)
+7. **JSP (JavaServer Pages)**
 
    JSPs are used to create dynamic web content. They are essentially HTML pages embedded with Java code, which can be executed on the server to generate dynamic content.
 
-9. Servlet Container
+9. **Servlet Container**
 
    The servlet container (e.g., Tomcat) manages the lifecycle of servlets and JSPs. It handles the loading, instantiation, and execution of servlets and JSPs, and provides services like request dispatching and session management.
 
-11. Database
+11. **Database**
 
     The database stores the application's data. JDBC (Java Database Connectivity) is typically used to connect to and interact with the database from the servlet.
 
-13. Deployment Descriptor (web.xml) (optional)
+13. **Deployment Descriptor (web.xml) (optional)**
 
     The web.xml file is used to configure the web application. It defines servlets, servlet mappings, initialization parameters, and other configuration settings.
+
+## Application Flow
+
+![image](https://github.com/user-attachments/assets/31cbe5eb-dfee-4742-8b41-b632339251c3)
+
+1. **Client Request**
+
+   The client sends an HTTP request to the web server.
+
+2. **Request Handling**
+
+   The web server receives the request and forwards it to the servlet container.
+
+3. **Servlet Processing**
+
+   The servlet container matches the request URL to a servlet mapping defined in web.xml. The corresponding servlet processes the request, performs business logic, interacts with the database if needed, and generates a response.
+
+4. **JSP Rendering**
+
+   If the response involves generating dynamic HTML content, the servlet can forward the request to a JSP. The JSP generates the HTML content by executing embedded Java code and returning the result to the servlet.
+
+5. **Response Generation**
+
+   The servlet or JSP generates the HTTP response and sends it back to the web server.
+
+6. **Client Response**
+
+   The web server sends the HTTP response back to the client, which is rendered in the web browser.
+
+

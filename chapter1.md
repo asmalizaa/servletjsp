@@ -6,6 +6,7 @@ Servlet/JSP application architecture is a common approach for developing web app
 
 | Component | Description |
 |-----------|-------------|
+| **Client (Browser)** | Users interact with the web application through a web browser. The browser sends HTTP requests and receives HTTP responses. |
 
 1. **Client (Browser)**
 

@@ -57,3 +57,44 @@ There are three potential ways in which we can employ to create a servlet:
 - Implementing Servlet Interface
 - Extending Generic Servlet
 - Extending HTTP Servlet
+
+### Servlet Container
+
+Servlet container, also known as Servlet engine, is an integrated set of objects that provide a run time environment for Java Servlet components. 
+In simple words, it is a system that manages Java Servlet components on top of the Web server to handle the Web client requests. 
+
+Services provided by the Servlet container:
+
+- Network Services: Loads a Servlet class. The loading may be from a local file system, a remote file system or other network services. The Servlet container provides the network services over which the request and response are sent.
+- Decode and Encode MIME-based messages: Provides the service of decoding and encoding MIME-based messages.
+- Manage Servlet container: Manages the lifecycle of a Servlet.
+- Resource management: Manages the static and dynamic resources, such as HTML files, Servlets, and JSP pages.
+- Security Service: Handles authorization and authentication of resource access.
+- Session Management: Maintains a session by appending a session ID to the URL path.
+
+### Life Cycle of a Servlet
+
+The entire life cycle of a Servlet is managed by the Servlet container which uses the javax.servlet.Servlet interface to understand the Servlet object and manage it. So, before creating a Servlet object, let’s first understand the life cycle of the Servlet object which is actually understanding how the Servlet container manages the Servlet object.
+
+Stages of the Servlet Life Cycle: The Servlet life cycle mainly goes through four stages,
+
+- Loading a Servlet.
+- Initializing the Servlet.
+- Request handling.
+- Destroying the Servlet.
+
+![image](https://github.com/user-attachments/assets/ccb1a798-cfeb-4469-bc32-ac36e84be440)
+
+Let’s look at each of these stages in details:
+
+1. Loading a Servlet: The first stage of the Servlet lifecycle involves loading and initializing the Servlet by the Servlet container. The Web container or Servlet Container can load the Servlet at either of the following two stages:
+
+   - Initializing the context, on configuring the Servlet with a zero or positive integer value.
+   - If the Servlet is not preceding stage, it may delay the loading process until the Web container determines that this Servlet is needed to service a request.
+
+     The Servlet container performs two operations in this stage:
+
+     - Loading: Loads the Servlet class.
+     - Instantiation: Creates an instance of the Servlet. To create a new instance of the Servlet, the container uses the no-argument constructor.
+
+

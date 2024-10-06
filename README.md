@@ -1,6 +1,6 @@
 # Servlet and JSP
 
-1. Introduction [https://github.com/asmalizaa/servletjsp/blob/main/chapter1.md]
+1. [Introduction](https://github.com/asmalizaa/pythoncustomized/blob/main/Chapter1.md)
 2. Servlets
 3. Sessions Management
 4. JSP

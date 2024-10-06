@@ -146,5 +146,84 @@ Let’s look at each of these methods in details:
 
    As soon as the destroy() method is activated, the Servlet container releases the Servlet instance.
 
+### Deployment Descriptor
 
+The deployment descriptor is a configuration file for a web application deployed to a servlet container (e.g., Apache Tomcat). It is an XML file named web.xml and is located in the WEB-INF directory of the web application. The deployment descriptor provides configuration and deployment information for the web application, such as servlet definitions, servlet mappings, context parameters, session configuration, and security settings.
 
+The web.xml file follows a specific XML schema defined by the Servlet specification. Below is a typical structure of a deployment descriptor:
+
+```
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <!-- Servlet Definitions -->
+    <servlet>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <servlet-class>com.example.HelloWorldServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mappings -->
+    <servlet-mapping>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <!-- Context Parameters -->
+    <context-param>
+        <param-name>configParam</param-name>
+        <param-value>configValue</param-value>
+    </context-param>
+
+    <!-- Session Configuration -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Error Pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.html</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+
+    <!-- Security Constraints -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/protected/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Login Configuration -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/login-error.html</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <!-- Security Roles -->
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
+
+</web-app>
+```
+
+The web.xml file is an essential part of Java web application deployment, providing a structured and standardized way to configure various aspects of the application.

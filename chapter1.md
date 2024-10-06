@@ -95,6 +95,8 @@ HTTP headers provide additional information about the request or response:
 
 ### Typical HTTP Communication Flow
 
+![image](https://github.com/user-attachments/assets/67d74354-9f4b-4a27-b17b-205b76cfe7bd)
+
 1. **Client sends an HTTP request:**
 
    The client sends an HTTP request to the server, specifying the method, URL, headers, and optionally a body.

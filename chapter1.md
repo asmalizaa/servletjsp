@@ -10,12 +10,24 @@ Servlet/JSP application architecture is a common approach for developing web app
 
 3. Web Server
 
-4. Servlets
+   The web server handles HTTP requests from clients and forwards them to the appropriate servlet or JSP for processing. Common web servers include Apache Tomcat, Jetty, and GlassFish.
 
-5. JSP (JavaServer Pages)
+5. Servlets
 
-6. Servlet Container
+   Servlets are Java classes that handle HTTP requests and generate responses. They are the backbone of the application, processing business logic, interacting with databases, and managing the application state.
 
-7. Database
+7. JSP (JavaServer Pages)
 
-8. Deployment Descriptor (web.xml) (optional)
+   JSPs are used to create dynamic web content. They are essentially HTML pages embedded with Java code, which can be executed on the server to generate dynamic content.
+
+9. Servlet Container
+
+   The servlet container (e.g., Tomcat) manages the lifecycle of servlets and JSPs. It handles the loading, instantiation, and execution of servlets and JSPs, and provides services like request dispatching and session management.
+
+11. Database
+
+    The database stores the application's data. JDBC (Java Database Connectivity) is typically used to connect to and interact with the database from the servlet.
+
+13. Deployment Descriptor (web.xml) (optional)
+
+    The web.xml file is used to configure the web application. It defines servlets, servlet mappings, initialization parameters, and other configuration settings.

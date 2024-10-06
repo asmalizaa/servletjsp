@@ -31,7 +31,29 @@ Servlet can be described in many ways, depending on the context.
 - Servlet is a class that extends the capabilities of the servers and responds to the incoming requests. It can respond to any requests.
 - Servlet is a web component that is deployed on the server to create a dynamic web page.
 
-![image](https://github.com/user-attachments/assets/c0553b14-4bd2-49c9-b04f-4ac118bd7304)
+![image](https://github.com/user-attachments/assets/78e2fd51-4b12-4b79-92f7-a3184f6d5f37)
 
+Other tasks that a servlet can do effectively are:
 
+- Can easily manage/control the application flow.
+- Suitable to implement business logic.
+- Can effectively balance the load on the server side.
+- Easily generate dynamic web content.
+- Handle HTTP Request and Response
+- Also act as an interceptor or filter for a specific group of requests.
 
+### Types of Servlet
+
+- Generic Servlets
+
+  These are those servlets that provide functionality for implementing a servlet. It is a generic class from which all the customizable servlets are derived. It is protocol-independent and provides support for HTTP, FTP, and SMTP protocols. The class used is ‘javax.servlet.Servlet’ and it only has 2 methods – init() to initialize & allocate memory to the servlet and destroy() to deallocate the servlet.
+  
+- HTTP Servlets
+
+  These are protocol dependent servlets, that provides support for HTTP request and response. It is typically used to create web apps. And has two of the most used methods – doGET() and doPOST() each serving their own purpose.
+
+There are three potential ways in which we can employ to create a servlet:
+
+- Implementing Servlet Interface
+- Extending Generic Servlet
+- Extending HTTP Servlet

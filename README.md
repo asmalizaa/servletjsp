@@ -1,2 +1,1 @@
-# servletjsp
-Servlet and JSP
+# Servlet and JSP

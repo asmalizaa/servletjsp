@@ -42,4 +42,20 @@ Servlet/JSP application architecture is a common approach for developing web app
 
    The web server sends the HTTP response back to the client, which is rendered in the web browser.
 
+Servlet/JSP application architecture provides a robust framework for building dynamic, scalable web applications in Java, leveraging the strengths of servlets and JSPs along with the MVC pattern to create maintainable and efficient applications.
+
+## The Hypertext Transfer Protocol (HTTP)
+
+The Hypertext Transfer Protocol (HTTP) is the foundation of data communication on the World Wide Web. It is an application layer protocol designed to transmit hypertext (structured text using logical links between nodes) and is used to retrieve interlinked resources from the web.
+
+### Key Features of HTTP
+
+| Feature | Description |
+|---------|-------------|
+| **Stateless Protocol** | Each HTTP request is independent and has no memory of previous requests. This stateless nature simplifies the protocol but requires mechanisms like cookies and sessions to maintain stateful interactions. |
+| **Request-Response Model** | HTTP operates on a request-response model, where a client (usually a web browser) sends an HTTP request to a server, and the server responds with the requested resource or an error message. |
+| **Client-Server Architecture** | The client initiates the communication by making requests, and the server processes these requests and provides appropriate responses. |
+| **Media Independence** | HTTP can transmit any type of data as long as both the client and server can handle the data format. Common data types include HTML, JSON, XML, images, and videos. |
+
+
 

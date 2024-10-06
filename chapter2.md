@@ -97,4 +97,54 @@ Let’s look at each of these stages in details:
      - Loading: Loads the Servlet class.
      - Instantiation: Creates an instance of the Servlet. To create a new instance of the Servlet, the container uses the no-argument constructor.
 
+2. Initializing a Servlet: After the Servlet is instantiated successfully, the Servlet container initializes the instantiated Servlet object. The container initializes the Servlet object by invoking the Servlet.init(ServletConfig) method which accepts ServletConfig object reference as parameter.
+
+   The Servlet container invokes the Servlet.init(ServletConfig) method only once, immediately after the Servlet.init(ServletConfig) object is instantiated successfully. This method is used to initialize the resources, such as JDBC datasource.
+
+   Now, if the Servlet fails to initialize, then it informs the Servlet container by throwing the ServletException or UnavailableException.
+
+3. Handling request: After initialization, the Servlet instance is ready to serve the client requests. The Servlet container performs the following operations when the Servlet instance is located to service a request :
+
+   - It creates the ServletRequest and ServletResponse objects. In this case, if this is a HTTP request, then the Web container creates HttpServletRequest and HttpServletResponse objects which are subtypes of the ServletRequest and ServletResponse objects respectively.
+   - After creating the request and response objects it invokes the Servlet.service(ServletRequest, ServletResponse) method by passing the request and response objects.
+
+   The service() method while processing the request may throw the ServletException or UnavailableException or IOException.
+
+4. Destroying a Servlet: When a Servlet container decides to destroy the Servlet, it performs the following operations,
+
+   - It allows all the threads currently running in the service method of the Servlet instance to complete their jobs and get released.
+   - After currently running threads have completed their jobs, the Servlet container calls the destroy() method on the Servlet instance.
+
+   After the destroy() method is executed, the Servlet container releases all the references of this Servlet instance so that it becomes eligible for garbage collection.
+
+### Servlet Life Cycle Methods
+
+There are three life cycle methods of a Servlet :
+
+- init()
+- service()
+- destroy()
+
+![image](https://github.com/user-attachments/assets/68480099-87f3-423e-94db-a4687f875744)
+
+Let’s look at each of these methods in details:
+
+1. init() method: The Servlet.init() method is called by the Servlet container to indicate that this Servlet instance is instantiated successfully and is about to put into service.
+
+  ![image](https://github.com/user-attachments/assets/bec06618-4f55-45db-87ae-651df6d38eed)
+
+2. service() method: The service() method of the Servlet is invoked to inform the Servlet about the client requests.
+
+   - This method uses ServletRequest object to collect the data requested by the client.
+   - This method uses ServletResponse object to generate the output content.
+
+   ![image](https://github.com/user-attachments/assets/feb974a3-3760-4635-b7c0-c9da8db6ea18)
+
+3. destroy() method: The destroy() method runs only once during the lifetime of a Servlet and signals the end of the Servlet instance.
+
+   ![image](https://github.com/user-attachments/assets/ab46598a-0c47-46d4-a227-d0567eb782f1)
+
+   As soon as the destroy() method is activated, the Servlet container releases the Servlet instance.
+
+
 

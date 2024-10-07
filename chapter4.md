@@ -27,5 +27,166 @@ There are several ways through which we can provide unique identifier in request
 
 Cookies are used a lot in web applications to personalize response based on your choice or to keep track of session. Before moving forward to the Servlet Session Management API, Let’s see how we can keep track of session with cookies through a small web application. 
 
+# Activity
 
+Let's add a login page to our project. This login page will then be configured as welcome page where we will get authentication details from user.
 
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<form action="LoginServlet" method="post">
+		Username: <input type="text" name="username"><br/>
+		Password: <input type="password" name="userpassword"/><br/>
+		<input type="submit" value=""/>
+	</form>
+</body>
+</html>
+```
+
+To process the login, we are going to add a servlet called LoginServlet.
+
+```
+package com.example.servlet;
+
+import java.io.IOException;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class LoginServlet extends HttpServlet {
+
+	// to keep it simple, we are going to use this default credentials
+	private final String username = "user";
+	private final String password = "password";
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// get request parameters for username and userpassword
+		String user = req.getParameter("username");
+		String pwd = req.getParameter("userpassword");
+
+		// check credentials
+		if (user.equals(username) && pwd.equals(password)) {
+			// valid - add to cookie
+			Cookie loginCookie = new Cookie("user", user);
+
+			// set cookie to expiry in 30 minutes
+			loginCookie.setMaxAge(30 * 60);
+
+			// add cookie to response
+			resp.addCookie(loginCookie);
+
+			// redirect to index page
+			resp.sendRedirect("index.html");
+
+		} else {
+			// invalid - replay login page
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/LoginSucceess.jsp");
+			rd.include(req, resp);
+		}
+	}
+}
+```
+
+Notice the cookie that we are setting to the response and then forwarding it to LoginSucceess.jsp, at this moment it html cannot handle cookie. So, we are going to convert it to a JSP so this cookie can be used there to track the session. 
+
+Also notice that cookie timeout is set to 30 minutes. Ideally there should be a complex logic to set the cookie value for session tracking so that it won’t collide with any other request.
+
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Success Page</title>
+</head>
+<body>
+	<h1>Login Success Page</h1>
+
+	<!-- add java codes to check cookie -->
+	<%
+	String user = null;
+
+	// retrieve cookies
+	Cookie[] cookies = request.getCookies();
+
+	if (cookies != null) {
+		for (Cookie cookie : cookies) {
+			if (cookie.getName().equals("user")) {
+		user = cookie.getValue();
+			}
+		}
+	}
+
+	// if user is empty, redirect to login page
+	if (user == null) {
+		response.sendRedirect("login.html");
+	}
+	%>
+	
+	<!-- else display greeting -->
+	<h3>Hi <%= user %>, Good day!</h3>
+	
+	<!-- add logout button -->
+	<form action="LogoutServlet" method="post">
+		<input type="submit" value="Logout" />
+	</form>
+</body>
+</html>
+```
+
+Notice that if we try to access the JSP directly, it will forward us to the login page. 
+
+When we will click on Logout button, we should make sure that cookie is removed from client browser.
+
+```
+package com.example.servlet;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class LogoutServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// retrieve cookies
+		Cookie[] cookies = request.getCookies();
+		Cookie loginCookie = null;
+
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("user")) {
+					loginCookie = cookie;
+					break;
+				}
+			}
+		}
+
+		if (loginCookie != null) {
+			// set cookie's max age to 0
+			loginCookie.setMaxAge(0);
+			response.addCookie(loginCookie);
+		}
+
+		response.sendRedirect("login.html");
+	}
+
+}
+```

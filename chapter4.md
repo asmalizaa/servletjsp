@@ -420,6 +420,8 @@ Another good thing with Servlet URL Encoding is that it’s a fallback approach 
 
 We can encode URL with HttpServletResponse encodeURL() method and if we have to redirect the request to another resource and we want to provide session information, we can use encodeRedirectURL() method. 
 
+# Activity
+
 Update the LoginServlet file to perform the URL encoding.
 
 ```
@@ -600,3 +602,7 @@ public class LogoutServlet extends HttpServlet {
 
 }
 ```
+When we run this application with cookie disabled, the jsessionid will not be displayed on the page, but it will be appended on the address bar instead.
+
+![image](https://github.com/user-attachments/assets/2956302b-09e4-42b4-ad51-ac147158ce71)
+

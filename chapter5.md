@@ -146,10 +146,12 @@ The precedence of operators highest to lowest, left to right is as follows:
 
 The following words are reserved for the JSP expression language and should not be used as identifiers.
 
-| and | eq | gt | true | instanceof |
-| or | ne | le | false | empty |
-| not | lt | ge | null | div |
-| mod | | | | |
+<table>
+  <tr><td>and</td><td>eq</td><td>gt</td><td>true</td><td>instanceof</td></tr>
+  <tr><td>or</td><td>ne</td><td>le</td><td>false</td><td>empty</td></tr>
+  <tr><td>not</td><td>lt</td><td>ge</td><td>null</td><td>div</td></tr>
+  <tr><td>mod</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
 
 
 

@@ -6,7 +6,7 @@
 3. [JSP](https://github.com/asmalizaa/servletjsp/blob/main/chapter3.md)
    - [Activity 2](https://github.com/asmalizaa/servletjsp/blob/main/activity2.md)
 4. [Sessions Management](https://github.com/asmalizaa/servletjsp/blob/main/chapter4.md)
-5. The Expression Language
+5. [The Expression Language](https://github.com/asmalizaa/servletjsp/blob/main/chapter5.md)
 6. JSTL
 7. Writing Custom Tags
 8. Tag Files

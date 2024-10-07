@@ -153,6 +153,41 @@ The following words are reserved for the JSP expression language and should not 
   <tr><td>mod</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 
+Note that many of these words are not in the language now, but they may be in the future, so you should avoid using them.
+
+## EL param example
+
+In this example, we printing the data stored in the session scope using EL. For this purpose, we have used sessionScope object.
+
+index.jsp
+
+![image](https://github.com/user-attachments/assets/bc88c1dd-d1e1-45b4-ae29-13ae6ece5a42)
+
+process.jsp
+
+![image](https://github.com/user-attachments/assets/8663a466-0ac6-4b06-8ad4-e9a677c05f48)
+
+## EL session example
+
+In this example, we printing the data stored in the session scope using EL. For this purpose, we have used sessionScope object.
+
+index.jsp
+
+![image](https://github.com/user-attachments/assets/f151da96-2a79-485d-b170-7cc3f71d30cc)
+
+process.jsp
+
+![image](https://github.com/user-attachments/assets/16055f09-80b1-4a17-94b8-10ee1138cf07)
+
+## EL cookie example
+
+index.jsp
+
+![image](https://github.com/user-attachments/assets/e5b9f0b0-4f43-4c25-b584-d313a9754847)
+
+process.jsp
+
+![image](https://github.com/user-attachments/assets/46b2f748-3f79-425f-a362-8646e11f0bbb)
 
 
 

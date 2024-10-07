@@ -87,11 +87,11 @@ public class LoginServlet extends HttpServlet {
 			resp.addCookie(loginCookie);
 
 			// redirect to index page
-			resp.sendRedirect("index.html");
+			resp.sendRedirect("LoginSuccess.jsp");
 
 		} else {
 			// invalid - replay login page
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/LoginSucceess.jsp");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
 			rd.include(req, resp);
 		}
 	}
@@ -190,3 +190,9 @@ public class LogoutServlet extends HttpServlet {
 
 }
 ```
+
+There is no method to remove the cookie, but we can set the maximum age to 0 so that it will be deleted from client browser immediately. When we run above application, we get response like below images.
+
+![image](https://github.com/user-attachments/assets/919c53aa-d150-4109-abad-aefd54c3481f)
+
+

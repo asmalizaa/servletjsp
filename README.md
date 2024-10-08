@@ -10,7 +10,7 @@
 6. [JSTL](https://github.com/asmalizaa/servletjsp/blob/main/chapter6.md)
 7. [Writing Custom Tags](https://github.com/asmalizaa/servletjsp/blob/main/chapter7.md)
 8. [Tag Files](https://github.com/asmalizaa/servletjsp/blob/main/chapter8.md)
-9. Listeners
+9. [Listeners](https://github.com/asmalizaa/servletjsp/blob/main/chapter9.md)
 10. Filters
 11. Decorating Requests and Responses
 12. Asynchronous Processing

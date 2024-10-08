@@ -8,8 +8,8 @@
 4. [Sessions Management](https://github.com/asmalizaa/servletjsp/blob/main/chapter4.md)
 5. [The Expression Language](https://github.com/asmalizaa/servletjsp/blob/main/chapter5.md)
 6. [JSTL](https://github.com/asmalizaa/servletjsp/blob/main/chapter6.md)
-7. Writing Custom Tags
-8. Tag Files
+7. [Writing Custom Tags](https://github.com/asmalizaa/servletjsp/blob/main/chapter7.md)
+8. [Tag Files](https://github.com/asmalizaa/servletjsp/blob/main/chapter8.md)
 9. Listeners
 10. Filters
 11. Decorating Requests and Responses

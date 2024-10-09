@@ -64,7 +64,31 @@ Let us compile the above class and copy it in a directory available in the envir
 
 Let us now use the above defined custom tag Hello in our JSP program as follows.
 
-![image](https://github.com/user-attachments/assets/c6a8861d-e9c5-4dbd-9780-3f89ec75d06c)
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%@ taglib uri="WEB-INF/custom.tld" prefix="ex" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
+
+<c:set var="pageTitle" value="Custom Tag Example" />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><c:out value="${pageTitle}" /></title>
+</head>
+<body>
+	<h1><c:out value="${pageTitle}" /></h1>
+	<ex:Hello/>
+	
+	<br/><br/>
+	<a href="LoginSuccess.jsp">Go Back</a>
+	
+</body>
+</html>
+```
 
 Call the above JSP and this should produce the following result.
 

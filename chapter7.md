@@ -267,7 +267,41 @@ The attribute's name is "message", so the setter method is setMessage(). Let us 
 
 Let us follow JSP with message attribute as follows.
 
-![image](https://github.com/user-attachments/assets/c7ea4428-9465-40d2-a7ef-85b0aae0ab9a)
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="WEB-INF/custom.tld" prefix="ex"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
+
+<c:set var="pageTitle" value="Custom Tag Example" />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><c:out value="${pageTitle}" /></title>
+</head>
+<body>
+	<h1>
+		<c:out value="${pageTitle}" />
+	</h1>
+	<ex:Hello />
+
+	<br /><br />
+	<ex:HelloMessage>
+		This is another message from body
+	</ex:HelloMessage>
+	
+	<br/><br/>
+	<ex:HelloMessage message="This is the message body that's assigned using attribute" />
+	
+	<br /><br />
+	<a href="LoginSuccess.jsp">Go Back</a>
+	
+</body>
+</html>
+```
 
 This will produce following result.
 

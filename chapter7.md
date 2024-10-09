@@ -132,7 +132,27 @@ public class HelloMessageTag extends SimpleTagSupport {
 
 Here, the output resulting from the invocation is first captured into a StringWriter before being written to the JspWriter associated with the tag. We need to change TLD file as follows.
 
-![image](https://github.com/user-attachments/assets/fdd39962-86bf-4f94-9abf-3ef6197f29e4)
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Example Custom Tag</short-name>
+
+	<tag>
+		<name>Hello</name>
+		<tag-class>com.example.tags.HelloTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<name>HelloMessage</name>
+		<tag-class>com.example.tags.HelloMessageTag</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+
+</taglib>
+```
 
 Let us now call the above tag with proper body as follows.
 

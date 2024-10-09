@@ -46,7 +46,21 @@ The above code has simple coding where the doTag() method takes the current JspC
 
 Let us compile the above class and copy it in a directory available in the environment variable CLASSPATH. Finally, create the following tag library file: <Tomcat-Installation-Directory>webapps\ROOT\WEB-INF\custom.tld.
 
-![image](https://github.com/user-attachments/assets/bfc46020-7f5b-4681-bb72-fed151da9be0)
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Example Custom Tag</short-name>
+
+	<tag>
+		<name>Hello</name>
+		<tag-class>com.example.tags.HelloTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	
+</taglib>
+```
 
 Let us now use the above defined custom tag Hello in our JSP program as follows.
 

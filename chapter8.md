@@ -75,7 +75,7 @@ This screenshot shows file structure within Tomcat folder c:\apache-tomcat-6.0.3
 
 The following screenshot shows the results of running the tagfileonetest.jsp JSP page within the tagfiles folder within Tomcat.
 
-![image](https://github.com/user-attachments/assets/0a65ba61-3caa-4914-abfd-eb1ad2c4d236)
+![image](https://github.com/user-attachments/assets/280a7b0d-9a25-4bf2-9cc3-d2c0eb1d09c1)
 
 ## Tag File Implicit Objects
 

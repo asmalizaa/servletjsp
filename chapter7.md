@@ -197,7 +197,45 @@ You will receive the following result.
 
 You can use various attributes along with your custom tags. To accept an attribute value, a custom tag class needs to implement the setter methods, identical to the JavaBean setter methods as shown below.
 
-![image](https://github.com/user-attachments/assets/b2b7e4c8-b8b2-4473-9030-1839acac061b)
+```
+package com.example.tags;
+
+import java.io.IOException;
+import java.io.StringWriter;
+
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.JspWriter;
+import jakarta.servlet.jsp.tagext.SimpleTagSupport;
+
+public class HelloMessageTag extends SimpleTagSupport {
+
+	StringWriter sw = new StringWriter();
+
+	// since we now are going to use attribute called 'message'
+	private String message;
+
+	// define set method to assign value to message
+	public void setMessage(String msg) {
+		message = msg;
+	}
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		// check if message is not empty
+		if (message != null) {
+			// use message from attribute
+			JspWriter out = getJspContext().getOut();
+			out.println(message);
+		} else {
+			// get the custom message from html body
+			getJspBody().invoke(sw);
+
+			// display custom message on the page
+			getJspContext().getOut().println(sw.toString());
+		}
+	}
+}
+```
 
 The attribute's name is "message", so the setter method is setMessage(). Let us now add this attribute in the TLD file using the <attribute> element as follows.
 

@@ -98,7 +98,11 @@ Call the above JSP and this should produce the following result.
 
 You can include a message in the body of the tag as you have seen with standard tags. Consider you want to define a custom tag named <ex:Hello> and you want to use it in the following fashion with a body.
 
-![image](https://github.com/user-attachments/assets/0d7b75b7-9d18-41f5-b970-d1778630557e)
+```
+	<ex:HelloMessage>
+		This is another message from body
+	</ex:HelloMessage>
+```
 
 Let us make the following changes in the above tag code to process the body of the tag.
 

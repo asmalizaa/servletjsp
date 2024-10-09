@@ -20,7 +20,27 @@ Consider you want to define a custom tag named <ex:Hello> and you want to use it
 
 To create a custom JSP tag, you must first create a Java class that acts as a tag handler. Let us now create the HelloTag class as follows.
 
-![image](https://github.com/user-attachments/assets/8ae42f81-9939-451a-a18b-221366882055)
+```
+package com.example.tags;
+
+import java.io.IOException;
+
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.JspWriter;
+import jakarta.servlet.jsp.tagext.SimpleTagSupport;
+
+public class HelloTag extends SimpleTagSupport {
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		// get writer object
+		JspWriter out = getJspContext().getOut();
+
+		// display message
+		out.println("Hello Custom Tag!");
+	}
+}
+```
 
 The above code has simple coding where the doTag() method takes the current JspContext object using the getJspContext() method and uses it to send "Hello Custom Tag!" to the current JspWriter object.
 

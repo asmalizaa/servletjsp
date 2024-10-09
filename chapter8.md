@@ -21,7 +21,17 @@ The container and any JSP pages that want to make use of tag files need a way to
 
 Tag files use the tag directive which is very similar to the page directive used by JSP pages, more on directives a bit later in the lesson. For now we have enough information to create our first tag file which is called tagfileone.tag and which has been placed directly inside the WEB-INF/tags folder of our web application called tagfiles.
 
-![image](https://github.com/user-attachments/assets/8a86cd99-5611-41fc-a283-c86a068038f1)
+```
+<%@ tag
+	import="java.time.LocalDateTime,java.time.format.DateTimeFormatter"%>
+
+<%
+	// get current date and time, then format it before display
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
+	String now = LocalDateTime.now().format(formatter);
+	out.println(now);
+%>
+```
 
 ## Using a Tag File
 

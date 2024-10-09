@@ -154,9 +154,40 @@ Here, the output resulting from the invocation is first captured into a StringWr
 </taglib>
 ```
 
-Let us now call the above tag with proper body as follows.
+Let us now call the above tag with proper body as follows. Update the JSP page to look like below.
 
-![image](https://github.com/user-attachments/assets/80c72939-9bfc-4bab-b568-7114fce80127)
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="WEB-INF/custom.tld" prefix="ex"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
+
+<c:set var="pageTitle" value="Custom Tag Example" />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><c:out value="${pageTitle}" /></title>
+</head>
+<body>
+	<h1>
+		<c:out value="${pageTitle}" />
+	</h1>
+	<ex:Hello />
+
+	<br /><br />
+	<a href="LoginSuccess.jsp">Go Back</a>
+
+	<br /><br />
+	<ex:HelloMessage>
+		This is another message from body
+	</ex:HelloMessage>
+	
+</body>
+</html>
+```
 
 You will receive the following result.
 

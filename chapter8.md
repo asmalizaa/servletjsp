@@ -39,7 +39,35 @@ When we want to use a tag file within our JSP pages we use the taglib directive 
 
 The following code example shows a JSP page called tagfileonetest.jsp that uses the tag file tagfileone.tag we wrote above. Remember that no TLD is required as when using tag files the name of the tag file is the same as the custom action it represents, which in this case is tagfileone.
 
-![image](https://github.com/user-attachments/assets/cd2f5f9d-f38d-4821-a71e-d21d8e5b3206)
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
+
+<!-- add reference to tag files -->
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
+
+<c:set var="pageTitle" value="Tag Files Example" />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><c:out value="${pageTitle}" /></title>
+</head>
+<body>
+	<h1><c:out value="${pageTitle}" /></h1>
+	
+	<!-- use the tagfileone tag -->
+	<p>Current date and time is <tf:tagfileone /></p>
+	
+	<br/>
+	<a href="LoginSuccess.jsp">Go Back</a>
+	
+</body>
+</html>
+```
 
 This screenshot shows file structure within Tomcat folder c:\apache-tomcat-6.0.37\webapps\tagfiles for the above entities.
 

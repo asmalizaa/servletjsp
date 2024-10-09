@@ -71,7 +71,7 @@ The following code example shows a JSP page called tagfileonetest.jsp that uses 
 
 This screenshot shows file structure within Tomcat folder c:\apache-tomcat-6.0.37\webapps\tagfiles for the above entities.
 
-![image](https://github.com/user-attachments/assets/4633d5c5-8e86-437d-985e-6411c67e74c4)
+![image](https://github.com/user-attachments/assets/645b17d5-3d00-4865-ba15-29f98e6215d5)
 
 The following screenshot shows the results of running the tagfileonetest.jsp JSP page within the tagfiles folder within Tomcat.
 

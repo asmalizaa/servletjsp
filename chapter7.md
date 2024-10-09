@@ -14,7 +14,9 @@ To write a custom tag, you can simply extend SimpleTagSupport class and override
 
 Consider you want to define a custom tag named <ex:Hello> and you want to use it in the following fashion without a body.
 
-![image](https://github.com/user-attachments/assets/5c9b2271-d95b-4817-b561-d84173ac261c)
+```
+<ex:Hello/>
+```
 
 To create a custom JSP tag, you must first create a Java class that acts as a tag handler. Let us now create the HelloTag class as follows.
 

@@ -91,5 +91,57 @@ With tag files we have access to implicit objects which are similar to those dis
 | response | javax.servlet.http.HttpServletResponse |
 | session | javax.servlet.http.HttpSession |
 
+To demonstrate, create another tag file with codes below. Save it in a file called tagfiletwo.tag
+
+```
+<%
+	// retrieve session object
+	String user = (String) session.getAttribute("user");
+	out.println("Hello " + user + "!");
+%>
+```
+
+![image](https://github.com/user-attachments/assets/13f842ff-2881-4298-a99e-f3edd7c56884)
+
+Update the JSP to contain the second tag file.
+
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
+
+<!-- add reference to tag files -->
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
+
+<c:set var="pageTitle" value="Tag Files Example" />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><c:out value="${pageTitle}" /></title>
+</head>
+<body>
+	<h1><c:out value="${pageTitle}" /></h1>
+	
+	<!-- use the tagfileone tag -->
+	<p>Current date and time is <tf:tagfileone /></p>
+	
+	<!-- use the tagfiletwo tag -->
+	<p><tf:tagfiletwo /></p>
+	
+	<br/>
+	<a href="LoginSuccess.jsp">Go Back</a>
+	
+</body>
+</html>
+```
+
+Relaunch the JSP page and verify the output similar like below.
+
+![image](https://github.com/user-attachments/assets/bf038f3d-54f8-4c66-8040-8d8f862840e8)
+
+
 Reference: [JSTL Tutorials - Tag Files (server2client.com)](https://server2client.com/jstl/tagfiles.html)
 

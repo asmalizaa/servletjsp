@@ -106,7 +106,29 @@ You can include a message in the body of the tag as you have seen with standard 
 
 Let us make the following changes in the above tag code to process the body of the tag.
 
-![image](https://github.com/user-attachments/assets/6cfddd5e-7012-4389-ad59-b4c8dfaf3837)
+```
+package com.example.tags;
+
+import java.io.IOException;
+import java.io.StringWriter;
+
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.tagext.SimpleTagSupport;
+
+public class HelloMessageTag extends SimpleTagSupport {
+
+	StringWriter sw = new StringWriter();
+
+	@Override
+	public void doTag() throws JspException, IOException {
+		// get the custom message from html body
+		getJspBody().invoke(sw);
+
+		// display custom message on the page
+		getJspContext().getOut().println(sw.toString());
+	}
+}
+```
 
 Here, the output resulting from the invocation is first captured into a StringWriter before being written to the JspWriter associated with the tag. We need to change TLD file as follows.
 

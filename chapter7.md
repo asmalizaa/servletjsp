@@ -239,7 +239,31 @@ public class HelloMessageTag extends SimpleTagSupport {
 
 The attribute's name is "message", so the setter method is setMessage(). Let us now add this attribute in the TLD file using the <attribute> element as follows.
 
-![image](https://github.com/user-attachments/assets/6184c3a6-8bab-441d-9657-f5ffbd8e155e)
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Example Custom Tag</short-name>
+
+	<tag>
+		<name>Hello</name>
+		<tag-class>com.example.tags.HelloTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	
+		<tag>
+		<name>HelloMessage</name>
+		<tag-class>com.example.tags.HelloMessageTag</tag-class>
+		<body-content>scriptless</body-content>
+
+		<attribute>
+			<name>message</name>
+		</attribute>
+	</tag>
+	
+</taglib>
+```
 
 Let us follow JSP with message attribute as follows.
 

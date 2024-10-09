@@ -178,12 +178,12 @@ Let us now call the above tag with proper body as follows. Update the JSP page t
 	<ex:Hello />
 
 	<br /><br />
-	<a href="LoginSuccess.jsp">Go Back</a>
-
-	<br /><br />
 	<ex:HelloMessage>
 		This is another message from body
 	</ex:HelloMessage>
+	
+	<br /><br />
+	<a href="LoginSuccess.jsp">Go Back</a>
 	
 </body>
 </html>
@@ -191,7 +191,7 @@ Let us now call the above tag with proper body as follows. Update the JSP page t
 
 You will receive the following result.
 
-![image](https://github.com/user-attachments/assets/91efb377-61c0-4d2d-8368-c86ffb5d5358)
+![image](https://github.com/user-attachments/assets/f2f6a51f-8876-467f-9c13-2ab8afa7b200)
 
 ## Custom Tag Attributes
 

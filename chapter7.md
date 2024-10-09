@@ -92,7 +92,7 @@ Let us now use the above defined custom tag Hello in our JSP program as follows.
 
 Call the above JSP and this should produce the following result.
 
-![image](https://github.com/user-attachments/assets/38e950c6-5796-48c2-9f08-ec8de0926407)
+![image](https://github.com/user-attachments/assets/918390fc-2b73-4fb9-a285-61a74f5a612a)
 
 ## Accessing the Tag Body
 

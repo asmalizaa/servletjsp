@@ -1,6 +1,6 @@
 # Custom Tag
 
-_Updated on 22nd February 2024
+_Updated on 9th October 2024 (these are additional examples)
 Use this example instead Custom Tags in JSP - GeeksforGeeks
 https://www.geeksforgeeks.org/custom-tags-in-jsp/_
 

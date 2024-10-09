@@ -305,7 +305,7 @@ Let us follow JSP with message attribute as follows.
 
 This will produce following result.
 
-![image](https://github.com/user-attachments/assets/472c5b06-4b07-4c77-bd26-7d0dac55659b)
+![image](https://github.com/user-attachments/assets/1d067487-1db2-4c75-9b87-fb5c9fbb431a)
 
 ## Custom Tag Attributes Considerations
 

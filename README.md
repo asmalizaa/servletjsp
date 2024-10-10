@@ -16,4 +16,4 @@
 12. [Asynchronous Processing](https://github.com/asmalizaa/servletjsp/blob/main/chapter12.md)
 13. [Security](https://github.com/asmalizaa/servletjsp/blob/main/chapter13.md)
 14. [Deployment](https://github.com/asmalizaa/servletjsp/blob/main/chapter14.md)
-15. Dynamic Registration and Servlet Container Initializers
+15. [Dynamic Registration and Servlet Container Initializers](https://github.com/asmalizaa/servletjsp/blob/main/chapter15.md)

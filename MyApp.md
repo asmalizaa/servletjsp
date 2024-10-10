@@ -1,6 +1,8 @@
 # MyApp Sample Codes
 
-login.jsp
+## JSP
+
+**login.jsp**
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -59,7 +61,7 @@ login.jsp
 	crossorigin="anonymous"></script>
 ```
 
-home.jsp
+**home.jsp**
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -132,7 +134,7 @@ home.jsp
 	crossorigin="anonymous"></script>
 ```
 
-adduser.jsp
+**adduser.jsp**
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -195,7 +197,7 @@ adduser.jsp
 	crossorigin="anonymous"></script>
 ```
 
-userlist.jsp
+**userlist.jsp**
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -259,7 +261,7 @@ userlist.jsp
 	crossorigin="anonymous"></script>
 ```
 
-userdetails.jsp
+**userdetails.jsp**
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -302,7 +304,9 @@ userdetails.jsp
 	crossorigin="anonymous"></script>
 ```
 
-LoginServlet.java
+## Java Class and Servlets
+
+**LoginServlet.java**
 
 ```
 package com.example.login;
@@ -391,7 +395,7 @@ public class LoginServlet extends HttpServlet {
 }
 ```
 
-LogoutServlet.java
+**LogoutServlet.java**
 
 ```
 package com.example.login;
@@ -431,7 +435,7 @@ public class LogoutServlet extends HttpServlet {
 }
 ```
 
-User.java
+**User.java**
 
 ```
 package com.example.domain;
@@ -495,7 +499,7 @@ public class User {
 }
 ```
 
-AddUser.java
+**AddUser.java**
 
 ```
 package com.example.domain;
@@ -540,7 +544,7 @@ public class AddUser extends HttpServlet {
 }
 ```
 
-UserServlet.java
+**UserServlet.java**
 
 ```
 package com.example.domain;
@@ -597,7 +601,7 @@ public class UserServlet extends HttpServlet {
 }
 ```
 
-UserDetails.java
+**UserDetails.java**
 
 ```
 package com.example.domain;
@@ -644,7 +648,9 @@ public class UserDetails extends HttpServlet {
 }
 ```
 
-web.xml
+## Deployment Descriptor
+
+**web.xml**
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

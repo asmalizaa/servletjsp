@@ -15,5 +15,5 @@
 11. [Decorating Requests and Responses](https://github.com/asmalizaa/servletjsp/blob/main/chapter11.md)
 12. [Asynchronous Processing](https://github.com/asmalizaa/servletjsp/blob/main/chapter12.md)
 13. [Security](https://github.com/asmalizaa/servletjsp/blob/main/chapter13.md)
-14. Deployment
+14. [Deployment](https://github.com/asmalizaa/servletjsp/blob/main/chapter14.md)
 15. Dynamic Registration and Servlet Container Initializers

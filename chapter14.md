@@ -179,7 +179,7 @@ Selecting the appropriate server environment depends on your application's requi
   - **Latency**: Potential network latency during deployment and access.
   - **Debugging Complexity**: Debugging can be more challenging compared to local deployment due to the separation between development and deployment environments.
 
-## Local Deployment Process
+### Local Deployment Process
 
 1. Set Up Local Server
    - Install a local server like Apache Tomcat, JBoss, or GlassFish.
@@ -194,7 +194,7 @@ Selecting the appropriate server environment depends on your application's requi
    - Access the application via http://localhost:8080/yourapp.
    - Perform local testing and debugging.
 
-## Remote Deployment Process
+### Remote Deployment Process
 
 1. Set Up Remote Server
    - Choose a hosting environment (on-premises server, cloud provider like AWS, Azure, Google Cloud).
@@ -218,7 +218,7 @@ Selecting the appropriate server environment depends on your application's requi
    - Access the application via the server’s public URL (e.g., http://yourserver.com/yourapp).
    - Perform thorough testing to ensure the application works as expected in the remote environment.
 
-## Summary
+### Summary
 
 - **Local Deployment**: Ideal for development and initial testing due to its simplicity and fast feedback loop.
 - **Remote Deployment**: Necessary for staging, pre-production, and production environments, providing realistic testing conditions, scalability, and broader access.
@@ -252,7 +252,7 @@ Choosing between local and remote deployment depends on the stage of development
 3. **Large Enterprise Applications:**
    - For large enterprise applications, web fragments enable the development of different features or components by separate teams. Each team can work on their module independently, ensuring a more manageable and scalable codebase.
 
-## Modularity in Web Applications
+### Modularity in Web Applications
 
 Modularity is a design principle that divides a system into distinct, independent components or modules, each encapsulating a specific functionality. In web applications, modularity offers several benefits:
 
@@ -271,7 +271,7 @@ Modularity is a design principle that divides a system into distinct, independen
 5. **Reusability:**
    - Modules can be reused across different projects, reducing duplication of effort and promoting consistency across applications.
 
-## How Web Fragments Work
+### How Web Fragments Work
 
 1. **Structure of Web Fragments:**
    - A web fragment is packaged as a JAR file and includes its own META-INF/web-fragment.xml file, which defines the web components (servlets, filters, listeners) and their configurations.
@@ -310,7 +310,7 @@ Modularity is a design principle that divides a system into distinct, independen
    - When the main web application is deployed, the application server automatically detects and integrates any web fragments included in the WEB-INF/lib directory of the application.
    - The configurations specified in web-fragment.xml are merged with the main web.xml file, ensuring a seamless integration of the web fragments into the application.
 
-## Example Use Case
+### Example Use Case
 
 Imagine you are developing a large e-commerce application. You can modularize the application using web fragments:
 

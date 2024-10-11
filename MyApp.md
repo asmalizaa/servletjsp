@@ -341,8 +341,9 @@ public class LoginServlet extends HttpServlet {
 		// get request parameters for username and userpassword
 		String user = request.getParameter("username");
 		String pwd = request.getParameter("userpassword");
-		 
-		List<User> users = null;
+
+		// get list of users
+		List<User> users  = getList();
 		
 		// check credentials
 		if (checkUser(user, pwd)) {
@@ -359,7 +360,6 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("success", "Login successful!");
 
 			/// get list of users and store in session
-			users  = getList();
 			session.setAttribute("users", users);
 
 			// get the encoded url string

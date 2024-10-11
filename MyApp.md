@@ -632,9 +632,7 @@ public class UserDetails extends HttpServlet {
 			List<User> users = (ArrayList<User>) session.getAttribute("users");
 			for (User u : users) {
 				if (u.getName().equals(name)) {
-					System.out.println("user found");
-					System.out.println(u);
-
+					System.out.println("user found: " + name);
 					request.setAttribute("user", u);
 					next = "userdetails.jsp";
 					break;
